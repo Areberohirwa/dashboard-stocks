@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/stocks.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- offcanvas added -->
+      <div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-warning fw-bolder text-center" id="offcanvasWithBothOptionsLabel">Sidebar
+            Navigation
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <nav class="sidebar sidebar-offcanvas d-flex flex-column" id="sidebar">
+            <div class="sidebar-brand-wrapper mb-2">
+              <a class="sidebar-brand brand-logo" href="stocks.html"><img class="img-fluid rounded bg-black"
+                  src="images/WAL_LOGO-no-bg.png" alt="logo"></a>
+            </div>
+            <ul class="nav d-flex flex-column">
+              <li class="nav-item profile bg-black p-1 rounded-end">
+                <div class="profile-desc justify-content-between align-items-center d-flex flex-row">
+                  <div class="profile-pic d-flex flex-row justify-content-around align-items-end">
+                    <div class="count-indicator ms-2">
+                      <img src="users/man.png" alt="profile-pic" class="img-fluid rounded-circle">
+                    </div>
+                    <div class=" mt-1 ms-2 d-flex align-items-end flex-column">
+                      <h5 class="fw-bold text-white">User Name</h5>
+                      <h3 class="fs-6 text-warning fst-italic">Gold Member</h3>
+                    </div>
+                  </div>
+                  <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i
+                      class="bi bi-three-dots-vertical"></i></a>
+                  <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list bg-dark"
+                    aria-labelledby="profile-dropdown">
+                    <a href="#" class="dropdown-item preview-item d-flex flex-row">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon">
+                          <i class="bi bi-gear-wide bg-dark text-primary rounded px-1"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content ms-2">
+                        <p class="preview-subject ellipsis mb-1 text-small text-info">Account settings</p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item preview-item d-flex flex-row">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon">
+                          <i class="bi bi-info-circle text-info bg-dark rounded px-1"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content">
+                        <p class="preview-subject ellipsis mb-1 text-small ms-2 text-info">Change Password</p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item preview-item d-flex flex-row">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon">
+                          <i class="bi bi-list-check text-success bg-dark rounded px-1"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content ms-2">
+                        <p class="preview-subject ellipsis mb-1 text-small text-info">To-do list</p>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item preview-item d-flex flex-row">
+                      <div class="preview-thumbnail">
+                        <div class="preview-icon">
+                          <i class="bi bi-person-circle purple bg-dark rounded px-1"></i>
+                        </div>
+                      </div>
+                      <div class="preview-item-content ms-2">
+                        <p class="preview-subject ellipsis mb-1 text-small text-info">Change profile</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item nav-category my-4">
+                <span class="nav-color fs-3 fw-bolder">Navigation</span>
+              </li>
+              <li class="nav-item menu-items active mb-2 bg-black rounded-end">
+                <a class="nav-link" href="stocks.html">
+                  <span class="menu-icon">
+                    <i class="bi bi-speedometer2 rounded purple rounded bg-dark p-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item menu-items dropdown mb-2">
+                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                  aria-controls="ui-basic">
+                  <span class="menu-icon">
+                    <i class="bi bi-eyeglasses text-white rounded bg-dark p-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Check It Out</span>
+                  <i class="bi bi-caret-down ms-1 text-white"></i>
+                </a>
+                <div class="collapse ms-2" id="ui-basic">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="bi bi-window-sidebar text-info rounded bg-dark p-1"></i>
+                        <span class="nav-color fw-light">
+                          Wessel Dashboard
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <i class="bi bi-window-sidebar purple rounded bg-dark p-1"></i>
+                        <span class="nav-color fw-light">Leo Dashboard</span>
+                      </a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="market.html">
+                        <i class="bi bi-graph-up-arrow text-warning rounded bg-dark p-1"></i>
+                        <span class="nav-color fw-light">Market/Charts/Tables</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item menu-items mb-2">
+                <a class="nav-link" href="pages/tables/basic-table.html">
+                  <span class="menu-icon">
+                    <i class="bi bi-robot text-danger rounded bg-dark p-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Chat Bot</span>
+                </a>
+              </li>
+              <li class="nav-item menu-items mb-2">
+                <a class="nav-link" href="pages/charts/chartjs.html">
+                  <span class="menu-icon">
+                    <i class="bi bi-house text-info rounded bg-dark p-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Home</span>
+                </a>
+              </li>
+              <li class="nav-item menu-items mb-2">
+                <a class="nav-link" href="pages/icons/mdi.html">
+                  <span class="menu-icon">
+                    <i class="bi bi-box-arrow-left text-warning rounded bg-dark p-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Logout</span>
+                </a>
+              </li>
+              <li class="nav-item menu-items mb-2">
+                <a class="nav-link" href="./pages/termsconditions/terms.html">
+                  <span class="menu-icon">
+                    <i class="bi bi-card-text text-success rounded bg-dark pb-1 ps-1 pe-1"></i>
+                  </span>
+                  <span class="menu-title nav-color fw-bolder fs-5">Terms and conditions</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- offcanvas ended  -->
+      <div class="container-fluid d-flex flex-column bg-color">
+        <!-- nav top  -->
+        <nav class="navbar navbar-expand-lg bg-dark sticky-top rounded mt-1 border-bottom border-2 py-1">
+          <div class="container-fluid">
+            <button class="navbar-brand btn" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+              <i class="bi bi-layout-text-sidebar-reverse  text-white fs-3"></i>
+            </button>
+            <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon py-0"><i class="bi bi-three-dots-vertical text-white text-center bg-black py-1 rounded px-2 m-0"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav w-100 mx-auto mb-2 mb-lg-0 d-flex justify-content-around flex-row flex-wrap  ">
+                <button type="button" class="btn btn-success">
+                  <i class="bi bi-cart-check-fill"></i>
+                </button>
+
+                <button type="button" class="btn btn-primary">
+                  <i class="bi bi-person-plus-fill"></i>
+                  <a href="#" class="text-white text-decoration-none"></a>
+                </button>
+                <div class="dropdown dropend">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-person-gear"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-left">
+                    <li class="d-flex flex-row p-1">
+                      <i class="bi bi-sliders"></i>
+                      <a class="dropdown-item" href="#">System Prefarence</a>
+                    </li>
+                    <li class="d-flex flex-row p-1">
+                      <i class="bi bi-arrow-down-up"></i>
+                      <a class="dropdown-item" href="#">Profits/Losses</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Terms & Conditions</a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <!-- nav top ended  -->
+        <div class="container-fluid">
+          <!-- body start  -->
+          <!-- cards  -->
+          <div class="container-fluid d-flex justify-content-around align-items-center flex-row text-white flex-wrap">
+            <div
+              class="container-fluid col-lg-3 col-md-6 card bg-dark d-flex flex-row justify-content-around align-items-center p-2 mt-3">
+              <div class="card-body d-flex flex-row justify-content-between align-items-center">
+                <div>
+                  <h5 class="card-title fw-bolder text-white fs-1">$179274.34</h5>
+                  <p class="card-text text-white fst-italic">Potential growth</p>
+                </div>
+                <span class="text-success fw-bolder fst-italic">+3.5%</span>
+              </div>
+              <div class="icon">
+                <i class="bi bi-arrow-up-right p-2 light fw-bold rounded text-success"></i>
+              </div>
+            </div>
+            <div
+              class="container-fluid col-lg-3 col-md-6 card bg-dark d-flex flex-row justify-content-around align-items-center p-2 mt-3">
+              <div class="card-body d-flex flex-row justify-content-between align-items-center">
+                <div>
+                  <h5 class="card-title fw-bolder text-white fs-1">$4332.34</h5>
+                  <p class="card-text text-white fst-italic">Daily Income</p>
+                </div>
+                <span class="text-danger fw-bolder fst-italic">-3.5%</span>
+              </div>
+              <div class="icon">
+                <i class="bi bi-arrow-down-left p-2 red fw-bold rounded text-danger"></i>
+              </div>
+            </div>
+            <div
+              class="container-fluid col-lg-3 col-md-6 card bg-dark d-flex flex-row justify-content-around align-items-center p-2 mt-3">
+              <div class="card-body d-flex flex-row justify-content-between align-items-center">
+                <div>
+                  <h5 class="card-title fw-bolder text-white fs-1">$17835.34</h5>
+                  <p class="card-text text-white fst-italic">Revenue Current</p>
+                </div>
+                <span class="text-success fw-bolder fst-italic">+11%</span>
+              </div>
+              <div class="icon">
+                <i class="bi bi-arrow-up-right p-2 light fw-bold rounded text-success"></i>
+              </div>
+            </div>
+            <div
+              class="container-fluid col-lg-3 col-md-6 card bg-dark d-flex flex-row justify-content-around align-items-center p-2 mt-3">
+              <div class="card-body d-flex flex-row justify-content-between align-items-center">
+                <div>
+                  <h5 class="card-title fw-bolder text-white fs-1">$1299.54</h5>
+                  <p class="card-text text-white fst-italic">Expenses Current</p>
+                </div>
+                <span class="text-success fw-bolder fst-italic">+8.11%</span>
+              </div>
+              <div class="icon">
+                <i class="bi bi-arrow-up-right p-2 light fw-bold rounded text-success"></i>
+              </div>
+            </div>
+          </div>
+          <!-- card-ended  -->
+          <!-- chart-started  -->
+          <div class="conatiner-fluid d-flex justify-content-around align-items-center mt-3 rounded flex-row flex-wrap">
+            <!-- table-transfers  -->
+            <div class="bg-dark p-4 rounded d-flex justify-content-around align-items-center flex-column mb-1">
+              <div class="chart d-flex justify-content-around align-items-center">
+                <div class="zero text-warning p-4 text-center">
+                  <p class="fs-6">$0.0%</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-between flex-column align-items-start">
+                <h2 class="text-white fs-4">Money Spenditure</h2>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-success">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">house-hold&insurance</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-danger">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">investements</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-warning">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">savings&hobbies</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-around align-items-start flex-column">
+                <h6 class="fs-4 text-white">Transfers</h6>
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to PayPal</h5>
+                      <p class="nav-color fst-italic">monthly expenses <br>
+                        07 Jan 2024, 9.24PM</p>
+                    </div>
+                    <h4 class="purple text-opacity-50 align-self-baseline ms-2">$254</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to AOP</h5>
+                      <p class="nav-color fst-italic">hotels&meetings <br>
+                        24 Apr 2024, 10.00AM</p>
+                    </div>
+                    <h4 class="text-info text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to Bundels</h5>
+                      <p class="nav-color fst-italic">calls&internet <br>
+                        monthly</p>
+                    </div>
+                    <h4 class="text-warning text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark p-4 rounded d-flex justify-content-around align-items-center flex-column mb-1">
+              <div class="chart1 d-flex justify-content-around align-items-center">
+                <div class="zero text-warning p-4 text-center">
+                  <p class="fs-6">$0.0%</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-between flex-column align-items-start">
+                <h2 class="text-white fs-4">Money Spenditure</h2>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-success">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">house-hold&insurance</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-danger">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">investements</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-warning">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">savings&hobbies</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-around align-items-start flex-column">
+                <h6 class="fs-4 text-white">Transfers</h6>
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to PayPal</h5>
+                      <p class="nav-color fst-italic">monthly expenses <br>
+                        07 Jan 2024, 9.24PM</p>
+                    </div>
+                    <h4 class="purple text-opacity-50 align-self-baseline ms-2">$254</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to AOP</h5>
+                      <p class="nav-color fst-italic">hotels&meetings <br>
+                        24 Apr 2024, 10.00AM</p>
+                    </div>
+                    <h4 class="text-info text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to Bundels</h5>
+                      <p class="nav-color fst-italic">calls&internet <br>
+                        monthly</p>
+                    </div>
+                    <h4 class="text-warning text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark
+ p-4 rounded d-flex justify-content-around align-items-center flex-column mb-1">
+              <div class="chart0 d-flex justify-content-around align-items-center">
+                <div class="zero text-warning p-4 text-center">
+                  <p class="fs-6">$0.0%</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-between flex-column align-items-start">
+                <h2 class="text-white fs-4">Money Spenditure</h2>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-success">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">house-hold&insurance</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-danger">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">investements</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-warning">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">savings&hobbies</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-around align-items-start flex-column">
+                <h6 class="fs-4 text-white">Transfers</h6>
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to PayPal</h5>
+                      <p class="nav-color fst-italic">monthly expenses <br>
+                        07 Jan 2024, 9.24PM</p>
+                    </div>
+                    <h4 class="purple text-opacity-50 align-self-baseline ms-2">$254</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to AOP</h5>
+                      <p class="nav-color fst-italic">hotels&meetings <br>
+                        24 Apr 2024, 10.00AM</p>
+                    </div>
+                    <h4 class="text-info text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to Bundels</h5>
+                      <p class="nav-color fst-italic">calls&internet <br>
+                        monthly</p>
+                    </div>
+                    <h4 class="text-warning text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark
+ p-4 rounded d-flex justify-content-around align-items-center flex-column mb-1">
+              <div class="chart2 d-flex justify-content-around align-items-center">
+                <div class="zero text-warning p-4 text-center">
+                  <p class="fs-6">$0.0%</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-between flex-column align-items-start">
+                <h2 class="text-white fs-4">Money Spenditure</h2>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-success">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">house-hold&insurance</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-danger">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">investements</p>
+                </div>
+                <div class=" d-flex justify-content-center align-items-baseline flex-row">
+                  <div class="p-2 rounded bg-warning">
+                  </div>
+                  <p class="text-white ms-1">$1200</p>
+                  <p class="nav-color ms-3 fst-italic">savings&hobbies</p>
+                </div>
+              </div>
+              <div class="mt-1 d-flex justify-content-around align-items-start flex-column">
+                <h6 class="fs-4 text-white">Transfers</h6>
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to PayPal</h5>
+                      <p class="nav-color fst-italic">monthly expenses <br>
+                        07 Jan 2024, 9.24PM</p>
+                    </div>
+                    <h4 class="purple text-opacity-50 align-self-baseline ms-2">$254</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to AOP</h5>
+                      <p class="nav-color fst-italic">hotels&meetings <br>
+                        24 Apr 2024, 10.00AM</p>
+                    </div>
+                    <h4 class="text-info text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center flex-row">
+                    <div class="d-flex justify-content-center align-items-start flex-column">
+                      <h5 class="text-white">Transfers to Bundels</h5>
+                      <p class="nav-color fst-italic">calls&internet <br>
+                        monthly</p>
+                    </div>
+                    <h4 class="text-warning text-opacity-50 align-self-baseline ms-2">$234</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- table-transfers-ended  -->
+            <!-- table-transfers market-movers-->
+            <div class="container-fluid bg-dark
+ rounded p-4 align-self-baseline mb-1">
+              <div class="card bg-dark
+ border border-0">
+                <div class="card-body text-white ">
+                  <h4 class="card-title text-white">Partners in trades <i
+                      class="bi bi-person-plus btn btn-outline-success"></i></h4>
+                  <p class="card-description text-white"> Valid Amounts in $<code> .%VAT</code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>Profile</th>
+                          <th>VatNo.</th>
+                          <th>Created</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Central Cee</td>
+                          <td class="nav-color fst-italic">53275531</td>
+                          <td>12 May 2024</td>
+                          <td><label class="p-2 rounded bg-danger fw-bold">Pending</label></td>
+                        </tr>
+                        <tr>
+                          <td>Messsy</td>
+                          <td class="nav-color fst-italic">53275532</td>
+                          <td>15 May 2024</td>
+                          <td><label class="p-2 rounded bg-warning fw-bold">In progress</label></td>
+                        </tr>
+                        <tr>
+                          <td>John</td>
+                          <td class="nav-color fst-italic">53275533</td>
+                          <td>14 May 2024</td>
+                          <td><label class="p-2 rounded bg-primary fw-bold">Fixed</label></td>
+                        </tr>
+                        <tr>
+                          <td>Peter</td>
+                          <td class="nav-color fst-italic">53275534</td>
+                          <td>16 May 2024</td>
+                          <td><label class="p-2 rounded fw-bold bg-success">Completed</label></td>
+                        </tr>
+                        <tr>
+                          <td>Dave</td>
+                          <td class="nav-color fst-italic">53275535</td>
+                          <td>20 May 2024</td>
+                          <td><label class="p-2 rounded bg-warning fw-bold">In progress</label></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button class="btn text-decoration-none nav-color fst-italic" type="button"
+                      data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothLogins"
+                      aria-controls="offcanvasWithBothLogins">
+                      Add more Partners/
+                    </button>
+
+                    <br>
+                    <div class="offcanvas offcanvas-end bg-dark
+" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothLogins" aria-labelledby="offcanvasWithBothOptionsLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel">Add Partners To Trade
+                          With</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <div class="card bg-dark
+ border border-0">
+                          <div class="card-body">
+                            <h4 class="card-title text-white">Partners form</h4>
+                            <p class="card-description text-white"> Please Fill This With Accurate Information.</p>
+                            <form class="forms-sample">
+                              <div class="form-group text-white fw-bold">
+                                <label for="exampleInputUsername1">Username</label>
+                                <input type="text" class="form-control bg-secondary text-white"
+                                  id="exampleInputUsername1" placeholder="Username">
+                              </div>
+                              <div class="form-group text-white fw-bold">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control bg-secondary text-white" id="exampleInputEmail1"
+                                  placeholder="Email">
+                              </div>
+                              <div class="form-group text-white fw-bold">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control bg-secondary text-white"
+                                  id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <div class="form-group text-white fw-bold">
+                                <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                                <input type="password" class="form-control bg-secondary text-white"
+                                  id="exampleInputConfirmPassword1" placeholder="Password">
+                              </div>
+                              <div class="form-check form-check-flat form-check-primary">
+                                <label class="form-check-label text-white fw-bold">
+                                  <input type="checkbox" class="form-check-input"> Remember me <i
+                                    class="input-helper"></i></label>
+                              </div>
+                              <button type="submit" class="btn btn-success me-2 text-white fw-bold" type="button"
+                                class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Submit</button>
+                              <button class="btn btn-danger text-white fw-bold" type="button" class="btn-close"
+                                data-bs-dismiss="offcanvas" aria-label="Close">Cancel</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="text-decoration-none text-warning fst-italic"><span class="text-danger">/</span>
+                      &ldquo;Partners in investments and risks are pooling resources and expertise to navigate volatile
+                      markets. Through strategic planning and diligent risk assessment, they're maximizing opportunities
+                      while mitigating potential losses. Collaboration allows them to diversify portfolios and adapt
+                      swiftly to changing market conditions, ensuring long-term success in investment
+                      ventures.&rdquo;<span class="text-danger">/</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- first-table-end  -->
+            <!-- second-table-start  -->
+            <div class="bg-dark p-4 rounded align-self-baseline mb-2">
+              <div class="card bg-dark border border-0">
+                <div class="card-body">
+                  <h4 class="card-title text-white">Feeds <i class="bi bi-newspaper btn btn-outline-warning"></i></h4>
+                  <p class="card-description text-warning"> Values Of Sales <code>%</code>
+                  </p>
+
+                  <a href="market.html" class="text-decoration-none nav-color fst-italic">Check out the market!</a> <br>
+                  <a href="#" class="text-decoration-none nav-color fst-italic">Learn more about the market.</a><br>
+                  <a href="#" class="text-decoration-none nav-color fst-italic">Having any Issues!</a> <br>
+                  <p class="text-decoration-none text-warning fst-italic"><span class="text-danger">/</span>
+                    &ldquo;Stock markets are experiencing
+                    heightened volatility as geopolitical tensions escalate, impacting investor sentiment.
+                    Uncertainties surrounding global trade, political unrest, and inflation concerns are driving
+                    fluctuations in equity prices. Tech giants continue to dominate the market, while traditional
+                    sectors struggle to find footing amidst changing consumer behavior and supply chain disruptions.
+                    Investors are advised to remain vigilant, diversify portfolios, and stay informed amid evolving
+                    market dynamics. Strategic long-term investments coupled with risk management strategies are
+                    crucial in navigating the current stock market landscape.&rdquo;<span class="text-danger">/</span>
+                  </p>
+                  <p class="text-decoration-none text-warning fst-italic">
+                    &ldquo;"Believe you can and you're halfway there." <code> - Theodore Roosevelt</code>&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- second-table-end  -->
+            <!-- todo-list/plans-start  -->
+            <div class="container-fluid d-flex justify-content-between align-items-stretch flex-column flex-wrap">
+              <div class="card bg-dark container-fluid">
+                <div class="card-body">
+                  <h4 class="card-title text-white">Todo List <i class="bi bi-check2-square btn btn-outline-info"></i>
+                  </h4>
+                  <p class="card-description text-white"> Add New <code>Todo's</code> <br>
+                  <div class="container-fluid d-flex justify-content-start align-items-start flex-row flex-wrap">
+                    <div class="d-flex justify-content-center align-items-start flex-row">
+                      <div class=" p-1 rounded bg-danger align-self-start">
+                      </div>
+                      <p class="fw-bold text-white fst-italic ms-1 align-self-center">Start</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-start flex-row mx-2">
+                      <div class=" p-1 rounded bg-warning align-self-start">
+                      </div>
+                      <p class="fw-bold text-white fst-italic ms-1 align-self-center">In Progress</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-start flex-row">
+                      <div class=" p-1 rounded bg-success align-self-start">
+                      </div>
+                      <p class="fw-bold text-white fst-italic ms-1 align-self-center">Completed</p>
+                    </div>
+                  </div>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-dark table-striped">
+                      <thead>
+                        <tr>
+                          <th> # Status </th>
+                          <th> Name Of Todo's </th>
+                          <th> Reason </th>
+                          <th> Description </th>
+                          <th> Deadline </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="d-flex justify-content-around align-items-center flex-row flex-wrap">
+                            <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                            <label class="btn btn-outline-danger" for="btn-check-outlined"><i
+                                class="bi bi-align-start"></i></label>
+                            <input type="checkbox" class="btn-check" id="btn-check-1-outlined" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="btn-check-1-outlined"><i
+                                class="bi bi-arrow-right"></i></label>
+                            <input type="checkbox" class="btn-check" id="btn-check-2-outlined" autocomplete="off">
+                            <label class="btn btn-outline-success" for="btn-check-2-outlined"><i
+                                class="bi bi-check-all"></i></label>
+                          </td>
+                          <td class="text-capitalize"> Prepare the presentation </td>
+                          <td class="text-capitalize"> work and conference </td>
+                          <td class="text-capitalize"> Use powerPoint (optional) </td>
+                          <td> May 15, 2015 (example)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-outline-info fw-bold">Add More Todo's</button>
+                  </div>
+                </div>
+              </div>
+              <!-- todo-list end  -->
+              <!-- plan start  -->
+              <div class="card my-2 bg-dark container-fluid">
+                <div class="card-body">
+                  <h4 class="card-title text-white">Plans <i class="bi bi-bookmarks btn btn-outline-secondary"></i></h4>
+                  <div class="add-items d-flex flex-column">
+                    <input type="text"
+                      class="form-control plans-input bg-secondary text-white border border-3 fw-bold fst-italic"
+                      placeholder="enter a new task..">
+                    <div>
+                      <button class="add btn btn-primary todo-list-add-btn mt-2 fw-bold">Add</button>
+                    </div>
+                  </div>
+                  <div class="list-wrapper">
+                    <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- plans-end  -->
+            </div>
+            <!-- todo-list/plans-end  -->
+            <!-- portfolio  -->
+            <div class="container-fluid rounded p-1">
+              <h1 class="fw-bolder fs-1 text-center text-info-emphasis fst-italic">PORTFOLIO</h1>
+              <!-- portfolio contents start  -->
+              <div class="container-sm d-flex justify-content-around align-items-center flex-column flex-wrap">
+                <div class="container-fluid d-flex justify-content-around align-items-center my-2 flex-row flex-wrap">
+                  <div class="card bg-dark px-3 mb-2 mb-lg-0">
+                    <div class="card-body">
+                      <h5 class="text-white">Revenue</h5>
+                      <div class="d-flex justify-content-between align-items-center flex-row">
+                        <div class="">
+                          <div class=" d-flex justify-content-around align-items-center flex-row">
+                            <h2 class="text-white">$32123</h2>
+                            <p class="text-success fw-medium">+3.5%</p>
+                          </div>
+                          <h6 class="nav-color">11.38% Since last month</h6>
+                        </div>
+                        <div class="align-self-baseline">
+                          <i class="bi bi-box fs-1 ms-2 text-primary"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-dark px-3 mb-2 mb-lg-0">
+                    <div class="card-body">
+                      <h5 class="text-white">Sales</h5>
+                      <div class="d-flex justify-content-between align-items-center flex-row">
+                        <div class="">
+                          <div class=" d-flex justify-content-around align-items-center flex-row">
+                            <h2 class="text-white">$2032</h2>
+                            <p class="text-danger fw-medium">-2.5%</p>
+                          </div>
+                          <h6 class="nav-color">11.38% Since last month</h6>
+                        </div>
+                        <div class="align-self-baseline">
+                          <i class="bi bi-tv fs-1 text-success ms-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-dark px-3 mb-2 mb-lg-0">
+                    <div class="card-body">
+                      <h5 class="text-white">Purchase</h5>
+                      <div class="d-flex justify-content-between align-items-center flex-row">
+                        <div class="">
+                          <div class=" d-flex justify-content-around align-items-center flex-row">
+                            <h2 class="text-white">$40278</h2>
+                            <p class="text-success fw-medium">+8.3%</p>
+                          </div>
+                          <h6 class="nav-color">9.61% Since last month</h6>
+                        </div>
+                        <div class="align-self-baseline">
+                          <i class="bi bi-briefcase fs-1 text-danger ms-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid card text-center mb-3 bg-dark text-white align-self-stretch">
+                  <div class="card-body">
+                    <h5 class="card-title fs-3">Trades <i class="bi bi-graph-up-arrow px-2 rounded text-info"></i></h5>
+                    <p class="card-description fst-italic nav-color fw-bold">List Of Active & Closed Positions
+                    </p>
+                    <!-- closed positions table  -->
+                    <div class="card-body">
+                      <h3 class="text-white fs-5 fw-bold">Trading History <br>Closed Positions <span>(1)</span></h3>
+                      <div class="table-responsive">
+                        <table class="table table-borderless table-hover table-dark table-striped">
+                          <thead>
+                            <tr>
+                              <th class="text-danger"> Symbol </th>
+                              <th class="text-danger"> Volume </th>
+                              <th class="text-danger"> Open Trade </th>
+                              <th class="text-danger"> Close Trade </th>
+                              <th class="text-danger"> Open price </th>
+                              <th class="text-danger"> Close price </th>
+                              <th class="text-danger"> Position type </th>
+                              <th class="text-danger"> Commission </th>
+                              <th class="text-danger"> Profit </th>
+                              <th class="text-danger"> Margin </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td> EURUSD </td>
+                              <td> 0.1 </td>
+                              <td> 24/03/2024 <br> 10:30 </td>
+                              <td> 24/03/2024 <br> 12:30 </td>
+                              <td> 147.19 </td>
+                              <td> 117.49</td>
+                              <td> Sell </td>
+                              <td> 0.0000 </td>
+                              <td> 2.74 </td>
+                              <td> 1.12 </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-white fs-5 fw-bold">Trading History <br>Active Positions <span>(0)</span></h3>
+                      <div class="table-responsive">
+                        <table class="table table-borderless table-hover table-dark table-striped">
+                          <thead>
+                            <tr>
+                              <th class="text-danger"> Symbol </th>
+                              <th class="text-danger"> Volume </th>
+                              <th class="text-danger"> Open Trade </th>
+                              <th class="text-danger"> Close Trade </th>
+                              <th class="text-danger"> Open price </th>
+                              <th class="text-danger"> Close price </th>
+                              <th class="text-danger"> Position type </th>
+                              <th class="text-danger"> Commission </th>
+                              <th class="text-danger"> Profit </th>
+                              <th class="text-danger"> Margin </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                              <td> # </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- closed positions table end -->
+                    <a href="#" class="btn btn-outline-primary fw-bold">Make A Notice</a>
+                  </div>
+                </div>
+                <div class="container-fluid card text-center mb-3 bg-dark text-white align-self-stretch">
+                  <div class="card-body">
+                    <h5 class="card-title fs-3">Profits<i class="bi bi-arrow-up text-success fw-bold"></i>/Losses <i
+                        class="bi bi-arrow-down text-danger fw-bolder"></i></h5>
+                    <p class="card-text fw-bold nav-color">Summary Of Your Trading History Until Now!</p>
+                    <div class="container-sm">
+                      <div class="card-body">
+                        <h3 class="fs-5 fw-bold text-success"> Profits<i
+                            class="bi bi-arrow-up text-success fw-bold"></i></h3>
+                        <div class="table-responsive">
+                          <table class="table table-borderless table-hover table-dark table-striped">
+                            <thead>
+                              <tr>
+                                <th class="text-danger"> Symbol </th>
+                                <th class="text-danger"> Date of Trade </th>
+                                <th class="text-danger"> Open price </th>
+                                <th class="text-danger"> Close price </th>
+                                <th class="text-danger"> Position type </th>
+                                <th class="text-danger"> Commission </th>
+                                <th class="text-danger"> profit </th>
+                                <th class="text-danger"> Margin </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td> EURUSD </td>
+                                <td> 24/03/2024 <br> 12:30 </td>
+                                <td> 147.19 </td>
+                                <td> 117.49</td>
+                                <td> Sell </td>
+                                <td> 0.0000 </td>
+                                <td class="text-success fw-bold"> 2.74 </td>
+                                <td> 1.12 </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-sm">
+                      <div class="card-body">
+                        <h3 class=" fs-5 fw-bold text-danger"> Losses<i class="bi bi-arrow-down fw-bold"></i></h3>
+                        <div class="table-responsive">
+                          <table class="table table-borderless table-hover table-dark table-striped">
+                            <thead>
+                              <tr>
+                                <th class="text-danger"> Symbol </th>
+                                <th class="text-danger"> Date of Trade </th>
+                                <th class="text-danger"> Open price </th>
+                                <th class="text-danger"> Close price </th>
+                                <th class="text-danger"> Position type </th>
+                                <th class="text-danger"> Commission </th>
+                                <th class="text-danger"> Loss </th>
+                                <th class="text-danger"> Margin </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td> EURUSD </td>
+                                <td> 24/03/2024 <br> 12:30 </td>
+                                <td> 147.19 </td>
+                                <td> 187.49</td>
+                                <td> Sell </td>
+                                <td> 0.0000 </td>
+                                <td class="text-danger fw-bold"> 2.74 </td>
+                                <td> 1.12 </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="market.html" class="btn btn-outline-primary fw-bold">Access WebTrader</a>
+                  </div>
+                </div>
+                <div class="container-fluid card text-center mb-3 bg-dark text-white align-self-stretch">
+                  <div class="card-body">
+                    <h5 class="card-title fs-3">System preferences/Trends <i class="bi bi-gear text-warning"></i></h5>
+                    <p class="card-text fw-bold nav-color text-center">Check out your most used trading technic and
+                      compare them to your partners and concurants.</p>
+                    <div class="container-sm">
+                      <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="images/neon-background.jpeg" class="d-block w-100 image-fluid rounded" alt="...">
+                            <div class="carousel-caption d-none d-md-block glass rounded">
+                              <h5 class="text-info fw-bold">Risk Management</h5>
+                              <p class="text-capitalize fw-bold"> Proper risk management is crucial in trading to
+                                protect capital. Strategies like setting stop-loss orders and diversifying investments
+                                help minimize losses and ensure long-term sustainability in the market.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/bitcoin2.png" class="d-block w-100 image-fluid rounded" alt="...">
+                            <div class="carousel-caption d-none d-md-block glass rounded">
+                              <h5 class="text-success fw-bolder">Trading Analysis</h5>
+                              <p class="text-primary fw-bold"> Technical analysis involves studying price charts and
+                                patterns to forecast future price movements. Traders use tools like moving averages,
+                                trendlines, and indicators to identify entry and exit points for trades.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/trade.jpg" class="d-block w-100 image-fluid rounded" alt="...">
+                            <div class="carousel-caption d-none d-md-block glass rounded">
+                              <h5 class="text-danger fw-bold">Fundamental Analysis</h5>
+                              <p class="text-capitalize text-info fw-bold"> Fundamental analysis evaluates the intrinsic
+                                value of assets by analyzing economic, financial, and qualitative factors. It involves
+                                assessing factors like company earnings, economic indicators, and geopolitical events to
+                                make informed trading decisions.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/chart.jpg!sw800" class="d-block w-100 image-fluid rounded" alt="...">
+                            <div class="carousel-caption d-none d-md-block glass rounded">
+                              <h5>Psychology of Trading</h5>
+                              <p>Understanding the psychology of trading is essential for success. Emotions like fear
+                                and greed can cloud judgment and lead to impulsive decisions. Developing discipline,
+                                patience, and emotional resilience is key to maintaining a clear and rational mindset
+                                while trading.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="images/blocks.jpg" class="d-block w-100 image-fluid rounded" alt="...">
+                            <div class="carousel-caption d-none d-md-block glass rounded">
+                              <h5 class="text-danger fw-bold">Trade Summary</h5>
+                              <p class="text-capitalize text-info fw-bold">Active Trades <span>(0)</span> "In one Forex
+                                trade, a 2%
+                                profit was achieved, demonstrating effective trading strategies in the foreign exchange
+                                market, likely through careful analysis and execution of trades based on market trends
+                                and indicators."<br></p>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                          data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                          data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <a href="market.html" class="btn btn-outline-primary fw-bold mt-3">Take A Look</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- portfolio contents end  -->
+          </div>
+          <!-- body ended  -->
+          <div class="container-fluid d-flex flex-row justify-content-between align-items-center flex-wrap  ">
+            <div class="nav-color fst-italic">Copyright &#169; <br> walgroup@.dashboard&reg; 2024</div>
+            <div class="nav-color text-center">Invite us the walgroup <br>
+              &num;302418973@student.rocmondriaan.nl</div>
+            <div>
+              <a href="#" class="text-decoration-none nav-color">Help&#33;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

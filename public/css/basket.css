@@ -1,0 +1,45 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.nav-color {
+  background-color: rgb(79, 139, 196);
+}
+
+body {
+  background-image: url(/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.logo {
+  width: 270px;
+  margin-left: 220px;
+}
+
+.row2 {
+  height: 200px;
+}
+
+#emailHelp {
+  color: white;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 350px;
+}
