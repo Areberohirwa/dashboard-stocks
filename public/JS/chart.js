@@ -28,10 +28,10 @@ const backgroundColours = [
   "springgreen",
 ];
 
-const chart1Url = "http://localhost:8080/forex";
-const chart2Url = "http://localhost:8080/stocks";
-const chart3Url = "http://localhost:8080/crypto";
-const chart4Url = "http://localhost:8080/commodity";
+const chart1Url = "http://localhost:8000/forex";
+const chart2Url = "http://localhost:8000/stocks";
+const chart3Url = "http://localhost:8000/crypto";
+const chart4Url = "http://localhost:8000/commodity";
 function fetchWithDelay(url, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
